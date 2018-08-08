@@ -1,0 +1,12 @@
+---
+- name: Map to Metal k8s hosts
+  hosts: cosbench
+  tags: metal
+  roles:
+  - update-hosts
+- name: Configuring cosbench
+  hosts: cosbench 
+  tags: cosbench 
+  roles: 
+  - ansible-role-cosbench 
+

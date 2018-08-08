@@ -1,0 +1,8 @@
+---
+- name: "Update Hosts"
+  lineinfile:
+    path: /etc/hosts
+    regexp: '.*{{ zenko_instance }}$'
+    line: "{{ hostvars[inventory_hostname].zenko }} {{ zenko_instance }}"
+    state: present
+  when: hostvars[inventory_hostname].zenko is defined

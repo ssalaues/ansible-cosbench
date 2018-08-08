@@ -1,0 +1,19 @@
+cos1 ansible_host=10.100.2.27   ansible_user=ubuntu zenko=10.100.1.250 
+cos2 ansible_host=10.100.3.43   ansible_user=ubuntu zenko=10.100.2.53  
+cos3 ansible_host=10.100.2.59   ansible_user=ubuntu zenko=10.100.2.187 
+cos4 ansible_host=10.100.1.232  ansible_user=ubuntu zenko=10.100.1.202 
+cos5 ansible_host=10.100.3.69   ansible_user=ubuntu zenko=10.100.1.33  
+
+[cosbench-controller]
+cos1
+
+[cosbench-driver]
+cos1
+cos2
+cos3
+cos4
+cos5
+
+[cosbench:children]
+cosbench-controller
+cosbench-driver
